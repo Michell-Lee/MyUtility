@@ -14,7 +14,7 @@ from shutil import copy2
 import traceback
 from multiprocessing import Process, freeze_support, set_start_method
 
-exclude_dir = ['Build', '.git', '.svn']
+exclude_dir = ['Build', 'Conf', '.git', '.svn']
 proc_file_ext = ['.asi', '.asl', '.inf', '.c', '.h']
 proc_file_list = []
 
