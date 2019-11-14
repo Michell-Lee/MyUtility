@@ -85,10 +85,12 @@ def processfile(filename):
 
 if __name__== "__main__":
     freeze_support()
+    os.system('mode con:cols=120')
+    
     try:
         # test parameters vaild
         Tdir = sys.argv[1]
-        if os.path.exists(Tdir) != True:
+        if not os.path.isdir(Tdir):
             Tdir=None
     except Exception as e:
         exceptreport(e)
