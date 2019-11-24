@@ -5,14 +5,15 @@
 #
 # 2019-11-06 @Michell =      First version
 # 2019-11-07                 support multi-process
+# 2019-11-26                 fixed windows size
 #
 
-import sys
 import os
-from time import time
-from shutil import copy2
+import sys
 import traceback
 from multiprocessing import Process, freeze_support, set_start_method
+from shutil import copy2
+from time import time
 
 exclude_dir = ['Build', 'Conf', '.git', '.svn']
 proc_file_ext = ['.asi', '.asl', '.inf', '.c', '.h']
@@ -85,7 +86,7 @@ def processfile(filename):
 
 if __name__== "__main__":
     freeze_support()
-    os.system('mode con:cols=120')
+    os.system('mode con: cols=100 lines=15')
     
     try:
         # test parameters vaild
